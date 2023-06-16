@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="PM2E16341.Mapa">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="TitleLabelStyle">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Label" x:Key="ValueLabelStyle">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="20">
+            <maps:Map HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand" x:Name="Map" IsShowingUser="True" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Latitud:" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="Lati" Text="{Binding Latitud}" Grid.Column="1" Style="{StaticResource ValueLabelStyle}" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Longitud:" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="Longi" Text="{Binding Longitud}" Grid.Column="1" Style="{StaticResource ValueLabelStyle}" />
+            </Grid>
+            <Label x:Name="Desc" IsVisible="false" Text="{Binding Descripcion}" HorizontalOptions="Center" FontSize="18" />
+            <Button x:Name="btncompartir" Text="Compartir Imagen"  Clicked="btncompartir_Clicked"
+                    FontSize="18" BackgroundColor="#007BFF" TextColor="White" HorizontalOptions="Fill" CornerRadius="20" HeightRequest="40" FontAttributes="Bold"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

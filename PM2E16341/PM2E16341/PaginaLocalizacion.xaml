@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Converters="clr-namespace:PM2E16341.Convertidor"
+             x:Class="PM2E16341.PaginaLocalizacion">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ListaUbicaciones" ItemTapped="ListaUbicaciones_ItemTapped" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="White" Margin="5" Padding="10" HasShadow="True" CornerRadius="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Imagen, Converter={StaticResource ByteArrayToImage}}"
+                                           HeightRequest="75" WidthRequest="75">
+                                        <Image.Clip>
+                                            <EllipseGeometry Center="37.5,37.5" RadiusX="37.5" RadiusY="37.5" />
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Text="{Binding Descripcion}" 
+                                           TextColor="Black" VerticalOptions="Center" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

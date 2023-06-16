@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E16341.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20" Padding="20">
+                <Image x:Name="uth" HeightRequest="100" WidthRequest="100" Source="Logouth.png" />
+
+                <Label Text="SITE VISITOR APP" FontSize="20" HorizontalOptions="Center" FontAttributes="Bold" />
+
+                <Frame  Padding="10" CornerRadius="10" >
+                    <Image x:Name="imgubicacion" HeightRequest="200" WidthRequest="200" Source="foto.png"  />
+                </Frame>
+
+                <Button x:Name="btntomarfoto" Text="Tomar Foto" Clicked="btntomarfoto_Clicked" BackgroundColor="#007BFF" TextColor="White" CornerRadius="10" HeightRequest="40" FontAttributes="Bold" />
+
+                <Label Text="Longitud:" TextColor="Black" FontSize="15" FontAttributes="Bold" />
+                <Entry x:Name="Longitud" IsEnabled="False" />
+
+                <Label Text="Latitud:" TextColor="Black" FontSize="15" FontAttributes="Bold" />
+                <Entry x:Name="Latitud" IsEnabled="False" />
+
+                <Label Text="Descripción:" TextColor="Black" FontSize="15" FontAttributes="Bold" />
+                <Entry x:Name="Descripcion" />
+
+                <Grid ColumnDefinitions="*,*" Margin="15,0">
+                    <Button x:Name="btnguardar" Text="Guardar" Clicked="btnguardar_Clicked" BackgroundColor="#009900" TextColor="White" CornerRadius="10" HeightRequest="40" FontAttributes="Bold" Grid.Column="0"/>
+                    <Button x:Name="btnlista" Clicked="btnlista_Clicked" Text="Lista Sitios" BackgroundColor="#Ff8000" TextColor="White" CornerRadius="10" HeightRequest="40" FontAttributes="Bold" Grid.Column="1"/>
+                </Grid>
+
+                <Button x:Name="btnsalir" Text="Salir" Clicked="btnsalir_Clicked" BackgroundColor="#DC3545" TextColor="White" HorizontalOptions="Fill" CornerRadius="10" HeightRequest="40" FontAttributes="Bold" />
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
